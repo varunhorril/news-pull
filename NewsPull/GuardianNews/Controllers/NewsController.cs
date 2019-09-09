@@ -44,10 +44,6 @@ namespace GuardianNews.Controllers
             return apiResponse;
         }
 
-
-        public IActionResult Index()
-        {
-            return View();
-        }
+        
     }
 }
