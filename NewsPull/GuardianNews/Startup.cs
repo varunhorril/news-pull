@@ -29,10 +29,16 @@ namespace GuardianNews
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
+            //services.Configure<IISServerOptions>(options =>
+            //{
+            //    options.AutomaticAuthentication = false;
+            //});
+
+
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
             services.AddEnv(builder => {
                 builder
-                .AddEnvFile("~/keys.env")
+                .AddEnvFile("keys.env")
                 .AddThrowOnError(true)
                 .AddEncoding(Encoding.ASCII);
             });
