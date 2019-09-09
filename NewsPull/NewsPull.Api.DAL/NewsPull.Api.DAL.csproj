@@ -5,6 +5,10 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="CouchbaseNetClient" Version="2.7.11" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\NewsPull.Api.Core\NewsPull.Api.Core.csproj" />
   </ItemGroup>
 
