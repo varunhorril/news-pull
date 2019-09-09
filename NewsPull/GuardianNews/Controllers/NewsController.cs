@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
+using GuardianNews.Model.ViewModel;
 using GuardianNews.Models;
 using Microsoft.AspNetCore.Mvc;
 using NewsPull.Api.Business.Modules;
@@ -44,6 +45,26 @@ namespace GuardianNews.Controllers
             return apiResponse;
         }
 
-        
+        [HttpPost]
+        [Route("subscribe")]
+        public IActionResult Subscribe(SubscribeViewModel model)
+        {
+            var apiResponse = new ApiResponse()
+            {
+                Content = ApiMessages.FAILED,
+                StatusCode = HttpStatusCode.InternalServerError
+            };
+
+            try
+            {
+
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
+
+            return BadRequest();
+        }
     }
 }
