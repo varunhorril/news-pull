@@ -1,4 +1,5 @@
 ﻿using NewsPull.Api.Business.Configuration;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.Text;
@@ -15,6 +16,7 @@ namespace NewsPull.Api.Business.Helpers
             }
             catch (Exception ex)
             {
+                Log.Error(ex, "[ERROR] API Key not found.");
                 throw ex;
             }
         }

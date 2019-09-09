@@ -43,6 +43,7 @@ namespace GuardianNews.Controllers
             catch (Exception ex)
             {
                 apiResponse.Content = ex.InnerException.ToString();
+                Log.Fatal(ex, $"[FAIL] SearchNews failed : {ex.InnerException}");
             }
 
             return apiResponse;
@@ -66,7 +67,7 @@ namespace GuardianNews.Controllers
             }
             catch (Exception ex)
             {
-                throw ex;
+                Log.Fatal(ex, $"[FAIL] Subscribe API failed : {ex.InnerException}");
             }
 
             return BadRequest();

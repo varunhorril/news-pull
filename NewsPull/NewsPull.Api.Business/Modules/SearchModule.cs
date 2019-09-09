@@ -7,6 +7,7 @@ using NewsPull.Api.Business.Configuration;
 using NewsPull.Api.Business.Helpers;
 using NewsPull.Api.Core.Interface;
 using NewsPull.Api.Core.Models;
+using Serilog;
 
 namespace NewsPull.Api.Business.Modules
 {
@@ -41,6 +42,7 @@ namespace NewsPull.Api.Business.Modules
             }
             catch (Exception ex)
             {
+                Log.Error(ex, "SearchByQuery failed.");
                 throw ex;
             }
         }

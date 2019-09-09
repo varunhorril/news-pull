@@ -1,5 +1,6 @@
 ﻿using GuardianNews.Models;
 using NewsPull.Api.Business.Models;
+using Serilog;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -33,7 +34,7 @@ namespace GuardianNews.Annotations
             }
             catch (Exception ex)
             {
-
+                Log.Debug(ex, "[FAIL] Integer conversion failed.");
             }
 
             return false;
