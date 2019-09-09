@@ -7,9 +7,16 @@ namespace NewsPull.Api.Business.Helpers
 {
     public static class ConfigHelper
     {
-        public static string GetSearchEndpoint()
+        public static string GetDevApiKey()
         {
-            return string.Empty;
+            try
+            {
+                return Environment.GetEnvironmentVariable("GUARDIAN_API_KEY");
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+            }
         }
 
     }
