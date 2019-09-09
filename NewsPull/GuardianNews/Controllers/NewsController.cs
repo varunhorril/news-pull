@@ -7,6 +7,7 @@ using GuardianNews.Model.ViewModel;
 using GuardianNews.Models;
 using Microsoft.AspNetCore.Mvc;
 using NewsPull.Api.Business.Modules;
+using Serilog;
 
 namespace GuardianNews.Controllers
 {
@@ -18,6 +19,8 @@ namespace GuardianNews.Controllers
         [Route("Ping")]
         public IActionResult Ping()
         {
+            Log.Information("PING 200 OK");
+
             return Ok();
         }
 
