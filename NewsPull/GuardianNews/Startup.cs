@@ -1,7 +1,9 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Text;
 using System.Threading.Tasks;
+using dotenv.net.DependencyInjection.Extensions;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -11,11 +13,8 @@ using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NewsPull.Api.Business.Configuration;
-using dotenv.net;
-using dotenv.net.DependencyInjection.Extensions;
-using System.Text;
 
-namespace NewPull.Api
+namespace GuardianNews
 {
     public class Startup
     {

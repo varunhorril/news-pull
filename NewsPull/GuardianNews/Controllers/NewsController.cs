@@ -3,28 +3,25 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Threading.Tasks;
-using System.Web;
-using System.Web.Http;
-using NewPull.Api.Models;
-using NewsPull.Api.Business;
+using GuardianNews.Models;
+using Microsoft.AspNetCore.Mvc;
 using NewsPull.Api.Business.Modules;
 
-namespace NewPull.Api.Controller
+namespace GuardianNews.Controllers
 {
-    [Route("")]
-    public class NewsController : ApiController
+    public class NewsController : Controller
     {
 
         [HttpGet]
         [Route("Ping")]
-        public IHttpActionResult Ping()
+        public IActionResult Ping()
         {
             return Ok();
         }
 
         [HttpGet]
         [Route("search")]
-        public async Task<IHttpActionResult> SearchNews(string query)
+        public async Task<IActionResult> SearchNews(string query)
         {
             var apiResponse = new ApiResponse()
             {
@@ -47,5 +44,9 @@ namespace NewPull.Api.Controller
         }
 
 
+        public IActionResult Index()
+        {
+            return View();
+        }
     }
 }

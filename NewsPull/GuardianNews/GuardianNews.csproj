@@ -2,8 +2,6 @@
 
   <PropertyGroup>
     <TargetFramework>netcoreapp2.1</TargetFramework>
-    <UserSecretsId>e7fec24b-125a-419b-8c04-cae16c2d3023</UserSecretsId>
-    <DockerDefaultTargetOS>Windows</DockerDefaultTargetOS>
   </PropertyGroup>
 
   <ItemGroup>
@@ -11,11 +9,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <PackageReference Include="dotenv.net" Version="1.0.6" />
-    <PackageReference Include="Microsoft.AspNet.WebApi.Core" Version="5.2.7" />
     <PackageReference Include="Microsoft.AspNetCore.App" />
     <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.1.2" PrivateAssets="All" />
-    <PackageReference Include="Microsoft.VisualStudio.Azure.Containers.Tools.Targets" Version="1.7.12" />
+    <PackageReference Include="Microsoft.VisualStudio.Web.CodeGeneration.Design" Version="2.1.9" />
   </ItemGroup>
 
   <ItemGroup>

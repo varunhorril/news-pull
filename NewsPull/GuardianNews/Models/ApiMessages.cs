@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 
-namespace NewPull.Api.Models
+namespace GuardianNews.Models
 {
     public static class ApiMessages
     {
