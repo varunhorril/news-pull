@@ -15,7 +15,7 @@ namespace GuardianNews.Model.ViewModel
 
         [Required(ErrorMessage = ApiMessages.MISSING_FREQUENCY)]
         [FrequencyValidation(ErrorMessage = ApiMessages.INVALID_FREQUENCY)]
-        public string Frequency { get; set; }
+        public int Frequency { get; set; }
 
         [Required(ErrorMessage = ApiMessages.MISSING_TOPIC)]
         public string Topic { get; set; }
