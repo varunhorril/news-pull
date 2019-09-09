@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NewsPull.Api.Business
 {
-    internal class CallerBase
+    public abstract class CallerBase
     {
         private readonly HttpClient _client = new HttpClient();
 

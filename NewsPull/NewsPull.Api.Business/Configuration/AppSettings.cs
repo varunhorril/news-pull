@@ -6,7 +6,8 @@ namespace NewsPull.Api.Business.Configuration
 {
     public class AppSettings
     {
-        public string Guardian_Endpoint { get; set; }
-        public string Guardian_SearchEndpoint { get; set; }
+        public static string API_Key { get; set; }
+        public static string Guardian_Endpoint { get; set; }
+        public static string Guardian_SearchEndpoint { get; set; }
     }
 }
