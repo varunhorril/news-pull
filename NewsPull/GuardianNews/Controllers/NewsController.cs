@@ -9,6 +9,7 @@ using NewsPull.Api.Business.Modules;
 
 namespace GuardianNews.Controllers
 {
+    [Route("")]
     public class NewsController : Controller
     {
 
@@ -37,7 +38,7 @@ namespace GuardianNews.Controllers
             }
             catch (Exception ex)
             {
-                apiResponse.Content = ApiMessages.SERVER_ERROR;
+                apiResponse.Content = ex.InnerException.ToString();
             }
 
             return apiResponse;
