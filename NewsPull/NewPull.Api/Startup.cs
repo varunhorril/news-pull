@@ -10,6 +10,10 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
+using NewsPull.Api.Business.Configuration;
+using dotenv.net;
+using dotenv.net.DependencyInjection.Extensions;
+using System.Text;
 
 namespace NewPull.Api
 {
@@ -27,6 +31,12 @@ namespace NewPull.Api
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.AddEnv(builder => {
+                builder
+                .AddEnvFile("~/keys.env")
+                .AddThrowOnError(true)
+                .AddEncoding(Encoding.ASCII);
+            });
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
