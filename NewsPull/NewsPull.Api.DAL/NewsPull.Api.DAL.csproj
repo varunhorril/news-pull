@@ -6,6 +6,7 @@
 
   <ItemGroup>
     <PackageReference Include="CouchbaseNetClient" Version="2.7.11" />
+    <PackageReference Include="Serilog.AspNetCore" Version="3.0.0" />
   </ItemGroup>
 
   <ItemGroup>
