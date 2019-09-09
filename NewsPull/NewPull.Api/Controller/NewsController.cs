@@ -14,6 +14,14 @@ namespace NewPull.Api.Controller
     [Route("")]
     public class NewsController : ApiController
     {
+
+        [HttpGet]
+        [Route("Ping")]
+        public IHttpActionResult Ping()
+        {
+            return Ok();
+        }
+
         [HttpGet]
         [Route("search")]
         public async Task<IHttpActionResult> SearchNews(string query)
