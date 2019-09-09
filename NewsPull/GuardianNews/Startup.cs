@@ -8,11 +8,14 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
 using NewsPull.Api.Business.Configuration;
+using NewsPull.Api.Business.Helpers;
+using NewsPull.Api.DAL.Context;
 
 namespace GuardianNews
 {
@@ -25,17 +28,12 @@ namespace GuardianNews
 
         public IConfiguration Configuration { get; }
 
-        // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
             services.AddMvc().SetCompatibilityVersion(CompatibilityVersion.Version_2_1);
-            //services.Configure<IISServerOptions>(options =>
-            //{
-            //    options.AutomaticAuthentication = false;
-            //});
-
-
             services.Configure<AppSettings>(Configuration.GetSection("AppSettings"));
+            services.AddDbContext<GuardianContext>(options => options.UseSqlServer(ConfigHelper.GetSqlConnString()));
+
             services.AddEnv(builder => {
                 builder
                 .AddEnvFile("keys.env")
@@ -44,7 +42,6 @@ namespace GuardianNews
             });
         }
 
-        // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
         public void Configure(IApplicationBuilder app, IHostingEnvironment env)
         {
             if (env.IsDevelopment())
