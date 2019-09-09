@@ -20,6 +20,9 @@ namespace NewsPull.Api.Business.Helpers
                 throw ex;
             }
         }
-
+        public static string GetSqlConnString()
+        {
+            return string.Empty;
+        }
     }
 }
